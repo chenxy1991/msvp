@@ -53,45 +53,49 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    <div class="row">
-      <div class="col-md-8 global">
-        <div>
-          <div class="row">
-            <div class="col-md-3 requestCount">
-              <p>请求总量</p>
-              <p>17149次</p>
-              <p>周同比</p>
-              <p>日环比</p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 global">
+            <div class="row">
+              <div class="col-md-3 requestCount">
+                <p class="title">请求总量</p>
+                <p class="result">17149次</p>
+                <div class="weekrate">
+                  <span>周同比</span>
+                  <img/>
+                  <span>15.6%</span>
+                </div>
+                <p class="dayrate">日环比</p>
+              </div>
+              <div class="col-md-3 requestCount">
+                <p>请求总量</p>
+                <p>17149次</p>
+                <p>周同比</p>
+                <p>日环比</p>
+              </div>
+              <div class="col-md-3 requestCount">
+                <p>请求总量</p>
+                <p>17149次</p>
+                <p>周同比</p>
+                <p>日环比</p>
+              </div>
+              <div class="col-md-3 requestCount">
+                <p>请求总量</p>
+                <p>17149次</p>
+                <p>周同比</p>
+                <p>日环比</p>
+              </div>
             </div>
-            <div class="col-md-3 requestCount">
-              <p>请求总量</p>
-              <p>17149次</p>
-              <p>周同比</p>
-              <p>日环比</p>
-            </div>
-            <div class="col-md-3 requestCount">
-              <p>请求总量</p>
-              <p>17149次</p>
-              <p>周同比</p>
-              <p>日环比</p>
-            </div>
-            <div class="col-md-3 requestCount">
-              <p>请求总量</p>
-              <p>17149次</p>
-              <p>周同比</p>
-              <p>日环比</p>
-            </div>
+          <hr>
+          <div>
+            <p>实时请求分布</p>
           </div>
+          <div></div>
         </div>
-        <hr>
-        <div>
-          <p>实时请求分布</p>
+        <div class="col-md-4" >
+          <div class="healthForm">a</div>
+          <div class="alertForm">b</div>
         </div>
-        <div></div>
-      </div>
-      <div class="col-md-4">
-        <div class="healthForm">a</div>
-        <div class="alertForm">b</div>
       </div>
     </div>
   </div>
@@ -125,24 +129,49 @@ export default {
   border-radius: 5px;
 }
 
+.global .metric .row {
+  margin:0 auto;
+}
+
 .healthForm {
   /*width: 472px;*/
   height: 310px;
   background: #FFFFFF;
   box-shadow: 0px 4px 8px 0px rgba(204, 204, 204, 0.5);
   border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .alertForm {
   /*width: 472px;*/
   height: 377px;
-  margin-top:15px;
+
   background: #FFFFFF;
   box-shadow: 0px 4px 8px 0px rgba(204, 204, 204, 0.5);
   border-radius: 5px;
 }
 
 .requestCount {
-  margin-top:16px;
+  margin-top:15px;
+}
+
+.title {
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 20px;
+}
+.result {
+  width: 248px;
+  height: 20px;
+  font-size: 20px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #077EF5;
+  line-height: 20px;
+}
+nav {
+  margin-bottom:10px;
 }
 </style>
