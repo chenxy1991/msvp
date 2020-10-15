@@ -93,8 +93,75 @@
           <div></div>
         </div>
         <div class="col-md-4" >
-          <div class="healthForm">a</div>
-          <div class="alertForm">b</div>
+          <div class="healthForm">c</div>
+          <div class="alertForm">
+            <div style="margin: 10px;">
+              <div class="row">
+                <div class="col-md-4 altitle">
+                  <label style="float: left">告警信息</label>
+                </div>
+                <div class="col-md-4 col-md-offset-4 altitle">
+                  <button class="btn-default" style="float: right" >配置</button>
+                </div>
+              </div>
+              <table class="table table-hover table-striped mytable col-md-12">
+                    <thead class="mytable">
+                    <tr class="mytable">
+                      <th>api名称</th>
+                      <th>服务方</th>
+                      <th>告警时间</th>
+                    </tr>
+                    </thead>
+                    <tbody class="mytable">
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>crm平台</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>计费系统</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>acc平台</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>资源系统</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>资源系统</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>资源系统</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>资源系统</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+                    <tr>
+                      <td style="color: #077EF5">api名称xx</td>
+                      <td>资源系统</td>
+                      <td>2020-10-15 16:00:13</td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+              <div style="position: relative;">
+                <span style="visibility: hidden;">xxxxxxx</span>
+                <label class="mydetail">查看更多>></label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -150,7 +217,42 @@ export default {
   box-shadow: 0px 4px 8px 0px rgba(204, 204, 204, 0.5);
   border-radius: 5px;
 }
+.altitle{
+  margin-top: 33px;
+  margin-bottom: 17px;
+}
 
+
+.mytable th{
+  text-align: center;
+}
+.mytable thead{
+  background-color: #D8D8D8;
+
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+}
+.mytable td{
+  border-top:0px solid transparent;
+
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 12px;
+
+}
+.mydetail{
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  line-height: 14px;
+  /*float: right;
+  margin-bottom: 20px;*/
+  position:absolute;
+  bottom:0px;
+  right:4px;
+}
 .requestCount {
   margin-top:15px;
 }
