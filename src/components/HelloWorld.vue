@@ -56,8 +56,19 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid" style="position:relative;">
-      <div class="navSide">
-        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+
+      <div class="navSide" >
+        <div class="sideBar">
+          <img src="../assets/home/sideBar.png" @click="isCollapse=!isCollapse;"/>
+        </div>
+        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :style="{display:isCollapse?'none':'block'}">
+          <div style="background-color: #EAEEF1;">
+          <el-input
+            placeholder="请输入内容"
+            suffix-icon="el-icon-search"
+            style="padding:8px;">
+          </el-input>
+          </div>
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
@@ -291,7 +302,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      isCollapse: false
+      isCollapse: true
     }
   },
   created(){
@@ -1126,7 +1137,6 @@ export default {
   margin-bottom: 17px;
 }
 
-
 .mytable th{
   text-align: center;
 }
@@ -1191,6 +1201,14 @@ nav {
   box-shadow: 0px 5px 9px 0px rgba(0,0,0,0.25);
   opacity: 1;
   background-color: #FFFFFF;
+}
+
+.navSide .sideBar img {
+  position:absolute;
+  right:0;
+  top:50%;
+  z-index: 1000;
+  transform: translate(0,-50%);
 }
 
 .el-menu-vertical-demo:not(.el-menu--collapse) {
