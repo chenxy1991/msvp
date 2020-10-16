@@ -182,9 +182,8 @@
           </div>
         </div>
         <div class="col-md-4" >
-         
+
           <div class="healthForm">
-          <div class="healthForm">c</div>
             <div class="htitle">
             <p class="htitlename">重要平台健康度</p>
             <a class="btn btn-default hbutton" href="#" role="button">配置</a>
@@ -212,7 +211,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="alertForm">
             <div style="margin: 10px;">
               <div class="row">
@@ -1139,7 +1138,7 @@ export default {
 }
 .mytable td{
   border-top:0px solid transparent;
-
+  text-align: center;
   font-size: 12px;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
