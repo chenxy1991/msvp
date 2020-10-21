@@ -11,7 +11,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">
-            <img src="../assets/home/sys.png" style="display:block;width:80%;height:120%">
+            <img src="../../assets/home/sys.png" style="display:block;width:80%;height:120%">
           </a>
         </div>
 
@@ -56,18 +56,17 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid" style="position:relative;">
-
       <div class="navSide" >
         <div class="sideBar">
-          <img src="../assets/home/sideBar.png" @click="isCollapse=!isCollapse;"/>
+          <img src="../../assets/home/sideBar.png" @click="isCollapse=!isCollapse;"/>
         </div>
         <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :style="{display:isCollapse?'none':'block'}">
           <div style="background-color: #EAEEF1;">
-          <el-input
-            placeholder="请输入内容"
-            suffix-icon="el-icon-search"
-            style="padding:8px;">
-          </el-input>
+            <el-input
+              placeholder="请输入内容"
+              suffix-icon="el-icon-search"
+              style="padding:8px;">
+            </el-input>
           </div>
           <el-submenu index="1">
             <template slot="title">
@@ -117,114 +116,126 @@
       </div>
       <div class="row">
         <div class="col-md-8 global">
-            <div class="row">
-              <div class="col-md-3 requestCount">
-                <p class="title">请求总量</p>
-                <p class="result">17149<span style="font-size: 16px;">&nbsp;次</span></p>
-                <div class="weekrate">
-                  <span class="week">周同比</span>
-                  <img src="../assets/home/up.png"/>
-                  <span class="week">15.6%</span>
-                </div>
-                <div class="weekrate">
-                  <span class="week">日环比</span>
-                  <img src="../assets/home/down.png"/>
-                  <span class="week">15.6%</span>
-                </div>
-              </div>
-              <div class="col-md-3 requestCount">
-                <p class="title">总体成功率</p>
-                <p class="result">80.02%</p>
-                <div class="weekrate">
-                  <span class="week">周同比</span>
-                  <img src="../assets/home/up.png"/>
-                  <span class="week">15.6%</span>
-                </div>
-                <div class="weekrate">
-                  <span class="week">日环比</span>
-                  <img src="../assets/home/down.png"/>
-                  <span class="week">15.6%</span>
-                </div>
-              </div>
-              <div class="col-md-3 requestCount">
-                <p class="title">API服务总数</p>
-                <p class="result">2000<span style="font-size: 16px;">&nbsp;个</span></p>
-                <div class="weekrate">
-                  <span class="week">周同比</span>
-                  <img src="../assets/home/up.png"/>
-                  <span class="week">15.6%</span>
-                </div>
-                <div class="weekrate">
-                  <span class="week">日环比</span>
-                  <img src="../assets/home/down.png"/>
-                  <span class="week">15.6%</span>
-                </div>
-              </div>
-              <div class="col-md-3 requestCount">
-                <p class="title">异常</p>
-                <p class="result">0<span style="font-size: 16px;">&nbsp;个</span></p>
-                <div class="weekrate">
-                  <span class="week">周同比</span>
-                  <img src="../assets/home/up.png" style="visibility: hidden"/>
-                  <span class="week">-</span>
-                </div>
-                <div class="weekrate">
-                  <span class="week">日环比</span>
-                  <img src="../assets/home/down.png" style="visibility: hidden"/>
-                  <span class="week">-</span>
-                </div>
+          <div style="margin-bottom: 28px;">
+            <div class="row apiForm">
+              <div class="col-md-4"><span class="APItop10">API调用TOP10</span></div>
+              <div class="col-md-4 col-md-offset-4">
+                <el-input
+                placeholder="请输入内容">
+                <i slot="suffix" class="el-input__icon el-icon-search"></i>
+                </el-input>
               </div>
             </div>
-          <hr>
-          <div class="curve">
-            <span>实时请求分布</span>
-            <div id="myChart" :style="{width: '1000px', height: '300px'}"></div>
+            <div class="apiGraph">
+              <canvas id="mycanvas" style="position: absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+              <div class="one">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-01</p>
+              </div>
+              <div class="two">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-02</p>
+              </div>
+              <div class="three">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-03</p>
+              </div>
+              <div class="four">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-04</p>
+              </div>
+              <div class="five">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-05</p>
+              </div>
+              <div class="centerItem">
+                <div><img src="../../assets/home/centerItem.png"></div>
+                <p class="apiTitle">CRM平台</p>
+              </div>
+              <div class="six">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-06</p>
+              </div>
+              <div class="seven">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-07</p>
+              </div>
+              <div class="eight">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-08</p>
+              </div>
+              <div class="nine">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-09</p>
+              </div>
+              <div class="ten">
+                <div><img src="../../assets/home/apiItem.png"></div>
+                <p class="apiTitle">API名称-10</p>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div id="myChart1" :style="{width: '300px', height: '230px'}"></div>
+          <div>
+            <div>
+              <el-dropdown>
+                <el-button>
+                  最近30分钟<i class="el-icon-arrow-down el-icon--right"></i>
+                </el-button>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item>黄金糕</el-dropdown-item>
+                  <el-dropdown-item>狮子头</el-dropdown-item>
+                  <el-dropdown-item>螺蛳粉</el-dropdown-item>
+                  <el-dropdown-item>双皮奶</el-dropdown-item>
+                  <el-dropdown-item>蚵仔煎</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
             </div>
-            <div class="col-md-4">
-              <div id="myChart2" :style="{width: '300px', height: '230px'}"></div>
-            </div>
-            <div class="col-md-4">
-              <div id="myChart3" :style="{width: '300px', height: '230px'}"></div>
+            <div class="row">
+              <div class="col-md-4">
+                <div id="myChart1" class="mychart1" ></div>
+                <!--:style="{width: '300px', height: '230px'}"-->
+              </div>
+              <div class="col-md-4">
+                <div id="myChart2" class="mychart1"></div>
+              </div>
+              <div class="col-md-4">
+                <div id="myChart3" class="mychart1"></div>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-md-4" >
-
           <div class="healthForm">
             <div class="htitle">
-            <p class="htitlename">重要平台健康度</p>
-            <a class="btn btn-default hbutton" href="#" role="button">配置</a>
+              <p class="htitlename">重要平台健康度</p>
+              <a class="btn btn-default hbutton" href="#" role="button">配置</a>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <div id="myChart4" :style="{width: '150px', height: '150px'}"></div>
+                <div id="myChart4" class="mychart2"></div>
+                <!--:style="{width: '150px', height: '150px'}"-->
               </div>
               <div class="col-md-4">
-                <div id="myChart5" :style="{width: '150px', height: '150px'}"></div>
+                <div id="myChart5" class="mychart2"></div>
               </div>
               <div class="col-md-4">
-                <div id="myChart6" :style="{width: '150px', height: '150px'}"></div>
+                <div id="myChart6" class="mychart2"></div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <div id="myChart7" :style="{width: '150px', height: '150px'}"></div>
+                <div id="myChart7" class="mychart2"></div>
               </div>
               <div class="col-md-4">
-                <div id="myChart8" :style="{width: '150px', height: '150px'}"></div>
+                <div id="myChart8" class="mychart2"></div>
               </div>
               <div class="col-md-4">
-                <div id="myChart9" :style="{width: '150px', height: '150px'}"></div>
+                <div id="myChart9" class="mychart2"></div>
               </div>
             </div>
           </div>
 
           <div class="alertForm">
-            <div style="margin: 10px;">
+            <div style="margin: 10px;position: relative;">
               <div class="row">
                 <div class="col-md-4 altitle">
                   <label style="float: left">告警信息</label>
@@ -233,62 +244,83 @@
                   <button class="btn-default" style="float: right" >配置</button>
                 </div>
               </div>
-              <table class="table table-hover table-striped mytable col-md-12">
-                    <thead class="mytable">
-                    <tr class="mytable">
-                      <th>api名称</th>
-                      <th>服务方</th>
-                      <th>告警时间</th>
-                    </tr>
-                    </thead>
-                    <tbody class="mytable">
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>crm平台</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>计费系统</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>acc平台</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>资源系统</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>资源系统</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>资源系统</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>资源系统</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #077EF5">api名称xx</td>
-                      <td>资源系统</td>
-                      <td>2020-10-15 16:00:13</td>
-                    </tr>
-
-                    </tbody>
-                  </table>
-              <div style="position: relative;">
+              <table class="table table-hover table-striped mytable">
+                <thead class="mytable">
+                <tr class="mytable">
+                  <th>api名称</th>
+                  <th>服务方</th>
+                  <th>告警时间</th>
+                </tr>
+                </thead>
+                <tbody class="mytable">
+                <tr @click="openModal">
+                  <td style="color: #077ef5">api名称xx</td>
+                  <td>crm平台</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                <tr>
+                  <td style="color: #077EF5">api名称xx</td>
+                  <td>计费系统</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                <tr>
+                  <td style="color: #077EF5">api名称xx</td>
+                  <td>acc平台</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                <tr>
+                  <td style="color: #077EF5">api名称xx</td>
+                  <td>资源系统</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                <tr>
+                  <td style="color: #077EF5">api名称xx</td>
+                  <td>资源系统</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                <tr>
+                  <td style="color: #077EF5">api名称xx</td>
+                  <td>资源系统</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                <tr>
+                  <td style="color: #077EF5">api名称xx</td>
+                  <td>资源系统</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                <tr>
+                  <td style="color: #077EF5">api名称xx</td>
+                  <td>资源系统</td>
+                  <td>2020-10-15 16:00:13</td>
+                </tr>
+                </tbody>
+              </table>
+              <div>
                 <span style="visibility: hidden;">xxxxxxx</span>
                 <label class="mydetail">查看更多>></label>
               </div>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">告警列表</h4>
+                    <el-input style="width:300px;height:30px;line-height: 30px;"
+                      placeholder="请输入服务名称/提供方进行查询"
+                      prefix-icon="el-icon-search">
+                    </el-input>
+                    <span class="el-icon-refresh">刷新列表</span>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -299,7 +331,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Business',
   data () {
     return {
       isCollapse: true
@@ -309,11 +341,10 @@ export default {
 
   },
   mounted() {
-    this.drawLine();
+      this.drawLine();
   },
   methods:{
-    drawLine(){
-      let myChart = this.$echarts.init(document.getElementById('myChart'))
+    drawLine() {
       let myChart1 = this.$echarts.init(document.getElementById('myChart1'))
       let myChart2 = this.$echarts.init(document.getElementById('myChart2'))
       let myChart3 = this.$echarts.init(document.getElementById('myChart3'))
@@ -323,6 +354,73 @@ export default {
       let myChart7 = this.$echarts.init(document.getElementById('myChart7'))
       let myChart8 = this.$echarts.init(document.getElementById('myChart8'))
       let myChart9 = this.$echarts.init(document.getElementById('myChart9'))
+      var c = document.getElementById("mycanvas");//初始化
+      var ctx = c.getContext("2d");
+      var point1 = { left: 60, top: 35 };//第一个点
+      var point3 = { left: 105, top: 35 };
+      var point4 = { left: 137, top: 35 };
+      var point5 = { left: 180, top: 35};
+      var point2 = { left: 125, top: 70};//第二个点
+      var point21 = { left: 150,top: 70};
+      var point6 = { left: 220,top: 35};
+      var point7 = { left:60,top:105};
+      var point8 = { left:105,top:105};
+      var point9 = { left:138,top:105};
+      var point10 = { left:180,top:105};
+      var point11 = { left:220,top:105}
+      ctx.beginPath();
+      ctx.lineWidth=0.5;
+      ctx.strokeStyle = '#52C41A';
+      ctx.setLineDash([2,5]);
+      ctx.moveTo(point1.left, point1.top);//起始位置
+      ctx.lineTo(point2.left, point2.top);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point3.left, point3.top);//起始位置
+      ctx.lineTo(point2.left, point2.top);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point4.left, point4.top);//起始位置
+      ctx.lineTo(138, 48);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point5.left, point5.top);//起始位置
+      ctx.lineTo(point21.left, point21.top);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point6.left, point6.top);//起始位置
+      ctx.lineTo(point21.left, point21.top);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point7.left, point7.top);//起始位置
+      ctx.lineTo(point2.left, point2.top);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point8.left, point8.top);//起始位置
+      ctx.lineTo(point2.left, point2.top);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point9.left, point9.top);//起始位置
+      ctx.lineTo(138, 90);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point10.left, point10.top);//起始位置
+      ctx.lineTo(point21.left, point21.top);//停止位置
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(point11.left, point11.top);//起始位置
+      ctx.lineTo(point21.left, point21.top);//停止位置
+      ctx.stroke();
+
       var dataBJ = [
         [1,55,9,56,0.46,18,6,"良"],
         [2,25,11,21,0.65,34,9,"优"],
@@ -412,112 +510,7 @@ export default {
         shadowColor: 'rgba(0, 0, 0, 0.5)'*/
       };
 
-      var option = {
-        backgroundColor: '#FFFFFF',
-        color: [
-          '#52C41A', '#F86E80'
-        ],
-        legend: {
-          top: 10,
-          data: ['请求成功', '请求失败'],
-          textStyle: {
-            color: '#000000',
-            fontSize: 16
-          }
-        },
-        grid: {
-          left: '5%',
-          right: 50,
-          top: '18%',
-          bottom: '10%'
-        },
-        tooltip: {
-          padding: 10,
-          backgroundColor: '#FFFFFF',
-          borderColor: '#777',
-          borderWidth: 1,
-          formatter: function (obj) {
-            var value = obj.value;
-            return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
-              + obj.seriesName + ' ' + value[0] + '日：'
-              + value[7]
-              + '</div>'
-              + schema[1].text + '：' + value[1] + '<br>'
-              + schema[2].text + '：' + value[2] + '<br>'
-              + schema[3].text + '：' + value[3] + '<br>'
-              + schema[4].text + '：' + value[4] + '<br>'
-              + schema[5].text + '：' + value[5] + '<br>'
-              + schema[6].text + '：' + value[6] + '<br>';
-          }
-        },
-        xAxis: {
-          type: 'value',
-          name: '',
-          nameGap: 16,
-          nameTextStyle: {
-            color: '#fff',
-            fontSize: 14
-          },
-          max: 31,
-          splitLine: {
-            show: false
-          },
-          axisLine: {
-            lineStyle: {
-              color: 'black'
-            }
-          }
-        },
-        yAxis: {
-          type: 'value',
-          name: '',
-          nameLocation: 'end',
-          nameGap: 20,
-          nameTextStyle: {
-            color: '#fff',
-            fontSize: 16
-          },
-          axisLine: {
-            lineStyle: {
-              color: 'black'
-            }
-          },
-          splitLine: {
-            show: false
-          }
-        },
 
-        series: [
-          {
-            name: '请求成功',
-            type: 'scatter',
-            itemStyle: itemStyle,
-            data: dataBJ,
-            markLine: {
-              silent: true,
-              symbol: ['none', 'none'],
-              label: {show: false},
-              data: [
-                {yAxis: 50},
-                {yAxis: 100},
-                {yAxis: 150},
-                {yAxis: 200},
-                {yAxis: 250},
-                {yAxis: 300}
-              ],
-              lineStyle:{
-                color:'#cccccc'
-              }
-            },
-          },
-          {
-            name: '请求失败',
-            type: 'scatter',
-            itemStyle: itemStyle,
-            data: dataGZ
-          }
-        ]
-      };
       var option1 = {
         color: ['#3398DB'],
         title: {
@@ -1079,7 +1072,6 @@ export default {
         ]
       }
 
-      myChart.setOption(option);
       myChart1.setOption(option1);
       myChart2.setOption(option2);
       myChart3.setOption(option3);
@@ -1089,12 +1081,43 @@ export default {
       myChart7.setOption(option7);
       myChart8.setOption(option8);
       myChart9.setOption(option9);
+
+      window.addEventListener("resize", function() {
+        myChart1.resize();
+        myChart2.resize();
+        myChart3.resize();
+        myChart4.resize();
+        myChart5.resize();
+        myChart6.resize();
+        myChart7.resize();
+        myChart8.resize();
+        myChart9.resize();
+
+        /*myChart.resize()
+        this.myChart1.resize();
+        this.myChart2.resize();
+        this.myChart3.resize();
+        this.myChart4.resize();
+        this.myChart5.resize();
+        this.myChart6.resize();
+        this.myChart7.resize();
+        this.myChart8.resize();
+        this.myChart9.resize();*/
+
+      });
     },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+
+    openModal(){
+      console.log("xxxxx");
+      $('#myModal').modal({
+        keyboard: false
+      })
     }
   }
 
@@ -1103,9 +1126,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .global {
   /*width: 896px;*/
-  height: 750px;
+  height:100%;
   background: #FFFFFF;
   box-shadow: 0px 4px 8px 0px rgba(204, 204, 204, 0.5);
   border-radius: 5px;
@@ -1115,25 +1139,126 @@ export default {
   margin:0 auto;
 }
 
+.apiForm {
+  margin-top:15px;
+  height:40px;
+  line-height: 40px;
+}
+
+.APItop10 {
+  width: 100px;
+  height: 14px;
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 14px;
+}
+
+.apiGraph {
+  margin-top:20px;
+  position:relative;
+  height:250px;
+}
+
+
+.apiGraph .one {
+  position:absolute;
+  left:157px;
+  text-align: center;
+}
+
+.apiTitle {
+  margin-top:5px;
+  height:17px;
+  light-height:17px;
+  font-weight: 500;
+  color: #999999;
+}
+
+.apiGraph .two {
+  position:absolute;
+  left:287px;
+  text-align: center;
+}
+.apiGraph .three {
+  position:absolute;
+  left:393px;
+  text-align: center;
+}
+.apiGraph .four {
+  position:absolute;
+  left:514px;
+  text-align: center;
+}
+.apiGraph .five {
+  position:absolute;
+  left:641px;
+  text-align: center;
+}
+
+.apiGraph .six {
+  position:absolute;
+  left:157px;
+  top:185px;
+  text-align: center;
+}
+
+.apiGraph .seven {
+  position:absolute;
+  left:287px;
+  top:185px;
+  text-align: center;
+}
+.apiGraph .eight {
+  position:absolute;
+  left:393px;
+  top:185px;
+  text-align: center;
+}
+.apiGraph .nine {
+  position:absolute;
+  left:514px;
+  top:185px;
+  text-align: center;
+}
+.apiGraph .ten {
+  position:absolute;
+  left:641px;
+  top:185px;
+  text-align: center;
+}
+
+.centerItem {
+  position:absolute;
+  left:395px;
+  text-align: center;
+  top:85px;
+}
+
 .healthForm {
-  /*width: 472px;*/
-  height: 340px;
+  /*width: 472px;
+  height: 340px;*/
   background: #FFFFFF;
   box-shadow: 0px 4px 8px 0px rgba(204, 204, 204, 0.5);
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .alertForm {
-  /*width: 472px;*/
-  height: 395px;
+  /*width: 472px;
+  height: 395px;*/
 
   background: #FFFFFF;
   box-shadow: 0px 4px 8px 0px rgba(204, 204, 204, 0.5);
   border-radius: 5px;
 }
 .altitle{
-  margin-top: 33px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.table {
   margin-bottom: 17px;
 }
 
@@ -1167,27 +1292,7 @@ export default {
   bottom:0px;
   right:4px;
 }
-.requestCount {
-  margin-top:15px;
-  text-align: center;
-}
 
-.title {
-  font-size: 14px;
-  font-family: PingFangSC-Medium, PingFang SC;
-  font-weight: 500;
-  color: #333333;
-  line-height: 20px;
-}
-.result {
-  width: 248px;
-  height: 20px;
-  font-size: 33px;
-  font-family: PingFangSC-Semibold, PingFang SC;
-  font-weight: 600;
-  color: #077EF5;
-  line-height: 20px;
-}
 nav {
   margin-bottom:10px;
 }
@@ -1238,7 +1343,7 @@ nav {
   height:30px;
   line-hight:30px;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .htitle .htitlename{
@@ -1258,5 +1363,33 @@ nav {
   vertical-align: middle;
 }
 
+/*.mychart {
+  width:900px;
+  height:350px;
+}*/
 
+.mychart1 {
+  width:250px;
+  height:250px;
+}
+
+.mychart2 {
+  width:130px;
+  height:130px;
+}
+
+.el-button {
+  padding:5px;
+  padding-left: 2px;
+  margin-bottom:10px;
+  width:150px;
+  background:#FFFFFF;
+  color:black;
+  border-color: black;
+}
+
+.modal-title {
+  display:inline-block;
+  margin-right: 20px;
+}
 </style>
