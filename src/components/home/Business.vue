@@ -300,27 +300,103 @@
                 <label class="mydetail">查看更多>></label>
               </div>
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">告警列表</h4>
-                    <el-input style="width:300px;height:30px;line-height: 30px;"
-                      placeholder="请输入服务名称/提供方进行查询"
-                      prefix-icon="el-icon-search">
-                    </el-input>
-                    <span class="el-icon-refresh">刷新列表</span>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header" style="position:relative;padding:10px;height:70px;line-height:70px;overflow:hidden;margin-bottom:20px;">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <div class="headerContent" style="position:absolute;left:10px;">
+                      <h4 class="modal-title" id="myModalLabel">告警列表</h4>
+                      <el-input style="width:300px;"
+                        placeholder="请输入服务名称/提供方进行查询"
+                        prefix-icon="el-icon-search">
+                      </el-input>
+                      <span class="el-icon-refresh" style="font-size: 15px;">刷新列表</span>
+                      </div>
+                      <div style="position:absolute;right:50px;z-index:1001;">
+                        <el-row>
+                          <el-button>导出</el-button>
+                          <el-button>确认并清除</el-button>
+                          <el-button>清除告警</el-button>
+                          <el-button style="background-color: #077EF5;">确认告警</el-button>
+                        </el-row>
+                      </div>
+                    </div>
+                    <div class="modal-body">
+                      <el-table
+                        ref="multipleTable"
+                        :data="tableData"
+                        tooltip-effect="dark"
+                        style="width: 100%"
+                        @selection-change="handleSelectionChange">
+                        <el-table-column
+                          type="selection"
+                          width="50">
+                        </el-table-column>
+                        <el-table-column
+                          label="告警级别"
+                          width="120">
+                          <template slot-scope="scope">
+                            <el-button :style="{backgroundColor:scope.row.backgroundcolor,borderRadius:scope.row.borderRadius}">{{ scope.row.extent }}</el-button>
+                          </template>
+                        </el-table-column>
+                        <el-table-column
+                          prop="name"
+                          label="服务名称"
+                          width="155">
+                        </el-table-column>
+                        <el-table-column
+                          prop="address"
+                          width="220"
+                          label="告警内容">
+                          <template>
+                            <el-input
+                              type="textarea"
+                              placeholder="请输入内容"
+                              v-model="textarea"
+                              resize="None"
+                              show-word-limit
+                            ></el-input>
+                          </template>
+                        </el-table-column>
+                        <el-table-column
+                          prop="date"
+                          label="告警时间"
+                          width="200">
+                        </el-table-column>
+                        <el-table-column
+                          prop="provider"
+                          label="提供方"
+                          width="120">
+                        </el-table-column>
+                        <el-table-column
+                          prop="request"
+                          label="请求方"
+                          width="120">
+                        </el-table-column>
+                        <el-table-column
+                          prop="costTime"
+                          label="耗时"
+                          width="90">
+                        </el-table-column>
+                        <el-table-column
+                          prop="operation"
+                          fixed="right"
+                          label="操作"
+                          width="100">
+                          <template slot-scope="scope">
+                            <el-button style="width:50px;text-align: center;background-color: #FFFFFF;border-color: #EAEEF1;">{{ scope.row.buttonContent }}</el-button>
+                          </template>
+                        </el-table-column>
+
+                      </el-table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -334,7 +410,83 @@ export default {
   name: 'Business',
   data () {
     return {
-      isCollapse: true
+      isCollapse: true,
+      textarea:"xxxxxxxxxx",
+      tableData: [{
+        extent: '紧急',
+        name: 'API-服务编号001',
+        backgroundcolor:"#FF3333",
+        borderRadius:"20px",
+        date:"2020-10-28 17:00:00",
+        provider:"CRM平台",
+        request:"SPS平台",
+        costTime:"2s",
+        buttonContent:"确认"
+      }, {
+        extent: '重要',
+        name: 'API-服务编号001',
+        backgroundcolor:"#FF9F00",
+        borderRadius:"20px",
+        date:"2020-10-28 17:00:00",
+        provider:"CRM平台",
+        request:"SPS平台",
+        costTime:"2s",
+        buttonContent:"清除"
+      }, {
+        extent: '次要',
+        name: 'API-服务编号001',
+        backgroundcolor:"#FFF9E5",
+        borderRadius:"20px",
+        date:"2020-10-28 17:00:00",
+        provider:"CRM平台",
+        request:"SPS平台",
+        costTime:"2s",
+        buttonContent:"确认"
+      },
+      {
+        extent: '重要',
+        name: 'API-服务编号001',
+        backgroundcolor:"#FF3333",
+        borderRadius:"20px",
+        date:"2020-10-28 17:00:00",
+        provider:"CRM平台",
+        request:"SPS平台",
+        costTime:"2s",
+        buttonContent:"清除"
+      }, {
+        extent: '重要',
+        name: 'API-服务编号001',
+        backgroundcolor:"#FF3333",
+        borderRadius:"20px",
+        date:"2020-10-28 17:00:00",
+        provider:"CRM平台",
+        request:"SPS平台",
+        costTime:"2s",
+        buttonContent:"确认"
+      },
+      {
+        extent: '重要',
+        name: 'API-服务编号001',
+        backgroundcolor:"#FF3333",
+        borderRadius:"20px",
+        date:"2020-10-28 17:00:00",
+        provider:"CRM平台",
+        request:"SPS平台",
+        costTime:"2s",
+        buttonContent:"清除"
+      },
+      {
+        extent: '重要',
+        name: 'API-服务编号001',
+        backgroundcolor:"#FF3333",
+        borderRadius:"20px",
+        date:"2020-10-28 17:00:00",
+        provider:"CRM平台",
+        request:"SPS平台",
+        costTime:"2s",
+        buttonContent:"确认"
+      }],
+      multipleSelection: []
     }
   },
   created(){
@@ -1118,6 +1270,10 @@ export default {
       $('#myModal').modal({
         keyboard: false
       })
+    },
+
+    handleSelectionChange(val) {
+      this.multipleSelection = val;
     }
   }
 
@@ -1383,7 +1539,7 @@ nav {
   padding-left: 2px;
   margin-bottom:10px;
   width:150px;
-  background:#FFFFFF;
+  /*background:#FFFFFF;*/
   color:black;
   border-color: black;
 }
@@ -1391,5 +1547,26 @@ nav {
 .modal-title {
   display:inline-block;
   margin-right: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #50557C;
+  line-height: 14px;
 }
+
+.modal-body {
+  padding-top:0px;
+}
+
+.has-gutter{
+  text-align: center;
+}
+
+.modal-header .el-button {
+  width:90px;
+}
+
+.el-table .el-button {
+  width:50px;
+}
+
 </style>
